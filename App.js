@@ -16,6 +16,8 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
+//  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -25,6 +27,12 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+//import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -114,4 +122,114 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+//----------------
+
+function LoginScreen({ navigation }) {
+    return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        title="Login with Google"
+//        onPress={() => navigation.navigate('MyTabs')}
+        onPress={() => navigation.navigate('Dashboard')}
+      />
+    </View>
+    );
+}
+
+//const Tab = createBottomTabNavigator();
+
+/*function MyTabs() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Dashboard"
+      screenOptions={{
+        tabBarActiveTintColor: '#e91e63',
+      }}
+    >
+      <Tab.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{
+          tabBarLabel: 'Dashboard',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="dashboard" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          tabBarLabel: 'Favorites',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="favorites" color={color} size={size} />
+          ),
+          tabBarBadge: 3,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}*/
+
+function DashboardScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+          title="Navigate to CryptoDetail"
+          onPress={() => navigation.navigate('CryptoDetail')}
+        />
+    </View>
+  );
+}
+
+function CryptoDetailScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>CryptoDetail Screen</Text>
+    </View>
+  );
+}
+
+function FavoritesScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Favorites Screen</Text>
+    </View>
+  );
+}
+
+function ProfileScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Profile Screen</Text>
+    </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+function App4() {
+  return (
+    <NavigationContainer>
+          <Stack.Navigator initialRouteName="Login">
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Cryptocurrencies' }}/>
+            <Stack.Screen name="CryptoDetail" component={CryptoDetailScreen} />
+            <Stack.Screen name="Favorites" component={FavoritesScreen} />
+            <Stack.Screen name="Profile" component={ProfileScreen} />
+          </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App4;

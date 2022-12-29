@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "675698429152",
+    "project_id": "cryptocurrencies-19268",
+    "storage_bucket": "cryptocurrencies-19268.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675698429152:android:d74300fcc9b69eddf01485",
+        "android_client_info": {
+          "package_name": "com.cryptocurrencies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675698429152-8aj7vc24kbnv8bf54o3ig8b9ipactteq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cryptocurrencies",
+            "certificate_hash": "95319f692533f021b29b5e03f12f70fefb8f222b"
+          }
+        },
+        {
+          "client_id": "675698429152-75ttv5fbutk1hoi7adm1c6kbavhvl4k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWxNjV7K644qkXztYo1gt8ZT9F6rJr1KI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "675698429152-75ttv5fbutk1hoi7adm1c6kbavhvl4k9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
